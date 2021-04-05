@@ -2,12 +2,14 @@ from .models import Post
 from django.contrib.auth.models import User
 from rest_framework import serializers
 
-class UserSerializer(serializers.Serializer):
-    email = serializers.EmailField()
-    username = serializers.CharField(max_length=100)
+class UserSerializer(serializers.ModelSerializer):
+  class Meta:
+    model = User
+    fields = ['id', 'email', 'username']
 
-class PostsSerializer(serializers.HyperlinkedModelSerializer):
-  author = UserSerializer() 
+class PostsSerializer(serializers.ModelSerializer):
+  author = UserSerializer()
+
   class Meta:
     model = Post
     fields = [
