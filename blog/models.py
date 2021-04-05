@@ -3,7 +3,6 @@ from django.conf import settings
 from django.utils import timezone
 
 class Post(models.Model):
-  id: models.IntegerField() 
   title = models.CharField(max_length=200)
   text = models.TextField()
   done = models.BooleanField(default=False)
