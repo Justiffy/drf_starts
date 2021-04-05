@@ -1,3 +1,5 @@
-## Остановился тут.
+### Docs
 
-https://tutorial.djangogirls.org/en/django_templates/
+## DRF
+
+- https://www.django-rest-framework.org/
